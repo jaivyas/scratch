@@ -9,7 +9,7 @@ kubectl apply -f https://raw.githubusercontent.com/containous/traefik/master/exa
 
 ENDPOINT_IP="$(kubectl get pods -n kube-system -o wide | grep traefik | awk '{print $7}')"
 
-echo "$ENDPOINT_IP traefik-ui.minikube" | sudo tee -a /etc/hosts
+#echo "$ENDPOINT_IP traefik-ui.minikube" | sudo tee -a /etc/hosts
 
 kubectl apply -f https://raw.githubusercontent.com/containous/traefik/master/examples/k8s/cheese-deployments.yaml
 
@@ -29,7 +29,7 @@ echo -e "http://traefik-ui.minikube:$(kubectl get services --namespace=kube-syst
 #echo -e "\n"
 
 echo "Add below hosts file entries"
-#echo -e "$(./minikube ip) stilton.minikube cheddar.minikube wensleydale.minikube traefik-ui.minikube"
+echo -e "$ENDPOINT_IP stilton.minikube cheddar.minikube wensleydale.minikube traefik-ui.minikube"
 echo -e "http://stilton.minikube:$(kubectl get services --namespace=kube-system | grep traefik-ingress-service | awk -F[:/] '{print $2}')"
 echo -e "http://cheddar.minikube:$(kubectl get services --namespace=kube-system | grep traefik-ingress-service | awk -F[:/] '{print $2}')"
 echo -e "http://wensleydale.minikube:$(kubectl get services --namespace=kube-system | grep traefik-ingress-service | awk -F[:/] '{print $2}')"

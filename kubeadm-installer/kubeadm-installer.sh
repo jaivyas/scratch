@@ -6,3 +6,4 @@ sudo echo deb http://apt.kubernetes.io/ kubernetes-xenial main | sudo tee  /etc/
 sudo apt-get update
 sudo  apt-get install -y docker.io
 sudo apt-get install --allow-unauthenticated -y kubelet kubeadm kubectl kubernetes-cni
+sudo iptables -t nat -A POSTROUTING -s 10.96.0.0/24 -j MASQUERADE
