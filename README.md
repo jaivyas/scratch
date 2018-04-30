@@ -14,4 +14,11 @@ pip3 install  PIL -t ~/mywork/personal/createthumbnail_lambda/
 pip3 install Image -t ~/mywork/personal/createthumbnail_lambda/
 ```
 #### Create zip file of createthumbnail_lambda and upload it to lambda via s3
-  
+ 
+## *ec2_delete_launch_job_lambda.py*
+> Deletes ec2 instance with given tag name and create a new one with given AMI. Useful for periodic patches.
+
+## *start_ec2_lambda.py*
+> Start ec2 instance
+
+ 
