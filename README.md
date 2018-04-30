@@ -1,7 +1,7 @@
 # Some quick and dirty scripts for automation
 >
 >
-## *createthumbnail_lambda:*
+## *createthumbnail_lambda*
 >This script/lambda function will convert images and videos to thumbnail and store it to specified s3 bucket.
 
 #### Pre-requisites:
@@ -21,4 +21,27 @@ pip3 install Image -t ~/mywork/personal/createthumbnail_lambda/
 ## *start_ec2_lambda.py*
 > Start ec2 instance
 
- 
+## *kubeadm-installer* 
+>Automated Installer for kubernetes using kubeadm tool
+
+#### Pre-requisite:
+```
+Add the user and IPs of master and worker nodes to kubeadm-all.sh
+MASTER_IP="master01"
+WORKER_IPs=(worker01 worker02)
+USER=ubuntu
+```
+
+#### How to:
+```
+Get all the scripts and yml file from kubeadm-installer directory of the repo
+#bash 	kubeadm-all.sh
+```
+
+## *minikube*
+> Automated Installer for kubernetes using minikube
+
+#### How to:
+```
+#bash minikube-install.sh
+```
